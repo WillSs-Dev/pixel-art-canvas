@@ -19,6 +19,7 @@ const everyColor = [
 
 function randomizeColors() {
   const colorSelectors = document.querySelectorAll('.color');
+  colorSelectors[0].style.backgroundColor = 'black'
   for (let key = 1; key < colorSelectors.length; key += 1) {
     const keys = colorSelectors[key];
     keys.style.backgroundColor =
@@ -53,7 +54,7 @@ addPixelListeners();
 function selectColor() {
   changeColor.classList.add('selected');
   changeColor.style.backgroundColor = this.style.backgroundColor;
-  console.log(changeBg);
+  console.log(changeColor);
 }
 
 const selectors = document.querySelectorAll('.color');
