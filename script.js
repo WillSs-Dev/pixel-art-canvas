@@ -1,4 +1,3 @@
-/*eslint-disable*/
 const everyColor = [
   '#0048BA',
   '#B0BF1A',
@@ -33,8 +32,7 @@ function randomizeColors() {
   colorSelectors[0].classList.add('selected');
   for (let key = 1; key < colorSelectors.length; key += 1) {
     const keys = colorSelectors[key];
-    keys.style.backgroundColor =
-      everyColor[Math.floor(Math.random() * everyColor.length)];
+    keys.style.backgroundColor = everyColor[Math.floor(Math.random() * everyColor.length)];
   }
 }
 
@@ -51,22 +49,21 @@ function addPixelListeners() {
 }
 
 function clearBoard() {
-  for (const i in pixels) {
-    pixels[i].style.backgroundColor = 'white'
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
 }
 
-window.onload = randomizeColors();
+window.onload = randomizeColors;
 addPixelListeners();
 button.addEventListener('click', clearBoard);
 
 function selectColor() {
-  for (const key of colorSelectors) {
-    key.classList.remove('selected');
+  for (let key = 0; key < colorSelectors.length; key += 1) {
+    colorSelectors[key].classList.remove('selected');
   }
   changeColor.style.backgroundColor = this.style.backgroundColor;
   this.classList.add('selected');
-  console.log(changeColor);
 }
 
 for (let key = 0; key < selectors.length; key += 1) {
