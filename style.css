@@ -32,7 +32,6 @@ h1 {
 
 #pixel-board {
   margin: auto;
-  /* border: 2px black solid; */
   max-width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -47,10 +46,10 @@ h1 {
   height: 40px;
 }
 
-#clear-board{
+#clear-board {
   display: inline-block;
   font-family: monospace;
-  margin-top: 20px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   border-radius: 5px;
   color: black;
