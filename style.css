@@ -26,6 +26,7 @@ h1 {
   background-color: black;
   border: 1px solid black;
   padding: 20px;
+  border-radius: 15px;
   list-style: none;
 }
 
@@ -44,4 +45,15 @@ h1 {
   border: 1px black solid;
   width: 40px;
   height: 40px;
+}
+
+#clear-board{
+  display: inline-block;
+  font-family: monospace;
+  margin-top: 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: black;
+  background-color: rgb(0, 177, 59);
+  border: 3px solid rgb(32, 16, 0);
 }
