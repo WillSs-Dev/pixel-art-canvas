@@ -29,6 +29,8 @@ changeColor.style.cssText = 'background-color: black';
 const button = document.querySelector('#clear-board');
 const selectors = document.querySelectorAll('.color');
 const shuffle = document.querySelector('#shuffle');
+const input = document.querySelector('#input');
+const canvas = document.querySelector('#pixel-board');
 
 function randomizeColors() {
   for (let key = 1; key < colorSelectors.length; key += 1) {
@@ -42,9 +44,27 @@ function selectPixel() {
   selectedPixel.style.backgroundColor = changeColor.style.backgroundColor;
 }
 
+function changeCanvas(enter) {
+  if (enter.key === 'Enter') {
+    if (Number(input.value) > 8 || Number(input.value) < 4) {
+      alert('Valor inválido');
+    } else {
+      for (let key = canvas.childElementCount; key > 0; key -= 1) {
+        canvas.removeChild(canvas.lastElementChild);
+      }
+      canvas.style.maxWidth = `${input.value * 2 + 5}rem`;
+      for (let i = 1; i <= Number(input.value * input.value); i += 1) {
+        const newPixel = document.createElement('div');
+        newPixel.classList.add('pixel');
+        newPixel.addEventListener('click', selectPixel);
+        canvas.appendChild(newPixel);
+      }
+    }
+  }
+}
+
 function addPixelListeners() {
   for (let key = 0; key < pixels.length; key += 1) {
-    pixels[key].id = key + 1;
     pixels[key].addEventListener('click', selectPixel);
   }
 }
@@ -59,8 +79,11 @@ function shuffler() {
   randomizeColors();
 }
 
-window.onload = randomizeColors; addPixelListeners(); button.addEventListener('click', clearBoard);
+window.onload = randomizeColors;
+addPixelListeners();
+button.addEventListener('click', clearBoard);
 shuffle.addEventListener('click', shuffler);
+input.addEventListener('keypress', changeCanvas);
 
 function selectColor() {
   for (let key = 0; key < colorSelectors.length; key += 1) {

@@ -2,10 +2,27 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-size: 1rem;
+}
+
+main {
+  background-color: rgba(128, 128, 128, 0.384);
+  margin: auto;
+  padding: 25px;
+  max-width: fit-content;
+  padding-bottom: 50px;
+  border-radius: 40px;
 }
 
 h1 {
   font-family: monospace;
+}
+
+#input {
+  border: 3px solid black;
+  border-radius: 14px;
+  padding: 5px;
+  margin-bottom: 20px;
 }
 
 #pickColor {
@@ -15,6 +32,13 @@ h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(156, 156, 156, 0.342);
+}
+
+#buttons {
+  padding: 20px;
 }
 
 #color-palette {
@@ -25,7 +49,6 @@ h1 {
 #clear-board {
   display: inline-block;
   font-family: monospace;
-  margin-bottom: 20px;
   text-transform: uppercase;
   padding-top: 3px;
   border-radius: 5px;
@@ -37,7 +60,6 @@ h1 {
 #shuffle {
   display: inline-block;
   font-family: monospace;
-  margin-bottom: 20px;
   padding-top: 3px;
   text-transform: uppercase;
   border-radius: 5px;
@@ -56,18 +78,15 @@ h1 {
 
 #pixel-board {
   margin: auto;
-  max-width: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
-  justify-content: center;
+  max-width: 17rem;
+  font-size: 0;
+  display: flexbox;
 }
 
 .pixel {
   background-color: white;
   border: 1px black solid;
+  display: inline-block;
   width: 40px;
   height: 40px;
 }
-
-
