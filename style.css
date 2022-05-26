@@ -22,8 +22,32 @@ h1 {
   margin: fit-content;
 }
 
-.color {
+#clear-board {
+  display: inline-block;
+  font-family: monospace;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding-top: 3px;
+  border-radius: 5px;
+  color: black;
+  background-color: rgb(0, 177, 59);
+  border: 3px solid rgb(32, 16, 0);
+}
+
+#shuffle {
+  display: inline-block;
+  font-family: monospace;
+  margin-bottom: 20px;
+  padding-top: 3px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: rgb(0, 177, 59);
   background-color: black;
+  border: 3px solid rgb(32, 16, 0);
+}
+
+.color {
+  background-color: cadetblue;
   border: 1px solid black;
   padding: 20px;
   border-radius: 15px;
@@ -46,13 +70,4 @@ h1 {
   height: 40px;
 }
 
-#clear-board {
-  display: inline-block;
-  font-family: monospace;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  border-radius: 5px;
-  color: black;
-  background-color: rgb(0, 177, 59);
-  border: 3px solid rgb(32, 16, 0);
-}
+

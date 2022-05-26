@@ -21,15 +21,16 @@ const everyColor = [
   '#800080',
 ];
 const colorSelectors = document.querySelectorAll('.color');
+colorSelectors[0].style.backgroundColor = 'black';
+colorSelectors[0].classList.add('selected');
 const pixels = document.querySelectorAll('.pixel');
 const changeColor = document.createElement('a');
 changeColor.style.cssText = 'background-color: black';
 const button = document.querySelector('#clear-board');
 const selectors = document.querySelectorAll('.color');
+const shuffle = document.querySelector('#shuffle');
 
 function randomizeColors() {
-  colorSelectors[0].style.backgroundColor = 'black';
-  colorSelectors[0].classList.add('selected');
   for (let key = 1; key < colorSelectors.length; key += 1) {
     const keys = colorSelectors[key];
     keys.style.backgroundColor = everyColor[Math.floor(Math.random() * everyColor.length)];
@@ -54,9 +55,12 @@ function clearBoard() {
   }
 }
 
-window.onload = randomizeColors;
-addPixelListeners();
-button.addEventListener('click', clearBoard);
+function shuffler() {
+  randomizeColors();
+}
+
+window.onload = randomizeColors; addPixelListeners(); button.addEventListener('click', clearBoard);
+shuffle.addEventListener('click', shuffler);
 
 function selectColor() {
   for (let key = 0; key < colorSelectors.length; key += 1) {
