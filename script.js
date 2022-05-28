@@ -54,13 +54,31 @@ function addPixelListeners() {
 }
 
 function createCanvas() {
-  for (let i = 0; i < (input.value * input.value); i += 1) {
+  for (let i = 0; i < input.value * input.value; i += 1) {
     const pixel = document.createElement('div');
     pixel.classList.add('pixel');
     canvas.appendChild(pixel);
     addPixelListeners();
   }
-  if (canvas.childElementCount !== (input.value * input.value)) {
+  if (canvas.childElementCount !== input.value * input.value) {
+    canvas.removeChild(canvas.firstChild);
+  }
+}
+
+function verify50() {
+  if (input.value > 50) {
+    for (let i = canvas.childElementCount; i > 0; i -= 1) {
+      canvas.removeChild(canvas.firstChild);
+    }
+    canvas.style.setProperty('--pixelNum', 50);
+    for (let i = 0; i < 50 * 50; i += 1) {
+      const pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      canvas.appendChild(pixel);
+      addPixelListeners();
+    }
+  }
+  if (canvas.childElementCount !== 50 * 50) {
     canvas.removeChild(canvas.firstChild);
   }
 }
@@ -68,6 +86,7 @@ function createCanvas() {
 function changeCanvas() {
   if (input.value < 5 || input.value > 50 || input.value === 0) {
     alert('Board inválido!');
+    verify50();
   } else {
     canvas.style.setProperty('--pixelNum', input.value);
     for (let i = canvas.childElementCount; i > 0; i -= 1) {
