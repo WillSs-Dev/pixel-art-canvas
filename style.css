@@ -2,14 +2,17 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 
 main {
   background-color: rgba(128, 128, 128, 0.384);
   margin: auto;
   padding: 25px;
-  max-width: fit-content;
+  width: max-content;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   padding-bottom: 50px;
   border-radius: 40px;
 }
@@ -77,16 +80,19 @@ h1 {
 }
 
 #pixel-board {
+  --pixelNum: 5;
+  height: auto;
   margin: auto;
-  max-width: 17rem;
-  font-size: 0;
-  display: flexbox;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(var(--pixelNum), 1fr);
+  grid-template-rows: repeat(var(--pixelNum), 1fr);
 }
 
 .pixel {
   background-color: white;
   border: 1px black solid;
-  display: inline-block;
+  border-radius: 3px;
   width: 40px;
   height: 40px;
 }
