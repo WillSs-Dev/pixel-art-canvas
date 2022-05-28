@@ -53,8 +53,10 @@ function addPixelListeners() {
   }
 }
 
-function createCanvas() {
-  for (let i = 0; i < input.value * input.value; i += 1) {
+function createCanvas(number) {
+  canvas.innerHTML = '';
+  canvas.style.setProperty('--pixelNum', number);
+  for (let i = 0; i < number * number; i += 1) {
     const pixel = document.createElement('div');
     pixel.classList.add('pixel');
     canvas.appendChild(pixel);
@@ -62,43 +64,15 @@ function createCanvas() {
   }
 }
 
-function verify5() {
-  if (input.value < 5) {
-    canvas.innerHTML = '';
-    canvas.style.setProperty('--pixelNum', 5);
-    for (let i = 0; i < 5 * 5; i += 1) {
-      const pixel = document.createElement('div');
-      pixel.classList.add('pixel');
-      canvas.appendChild(pixel);
-      addPixelListeners();
-    }
-  }
-}
-function verify50() {
-  if (input.value > 50) {
-    canvas.innerHTML = '';
-    canvas.style.setProperty('--pixelNum', 50);
-    for (let i = 0; i < 50 * 50; i += 1) {
-      const pixel = document.createElement('div');
-      pixel.classList.add('pixel');
-      canvas.appendChild(pixel);
-      addPixelListeners();
-    }
-  }
-  input.value = '';
-}
-
 function changeCanvas() {
-  if (input.value < 5) {
-    verify5();
+  if (input.value < 5 && input.value >= 1) {
+    createCanvas(5);
   } else if (input.value > 50) {
-    verify50();
-  } else if (input.value.length == 0) {
-    window.alert('Board inválido!');
+    createCanvas(50);
+  } else if (input.value.length === 0) {
+    alert('Board inválido!');
   } else {
-    canvas.style.setProperty('--pixelNum', input.value);
-    canvas.innerHTML = '';
-    createCanvas();
+    createCanvas(input.value);
   }
   input.value = '';
 }
@@ -117,7 +91,7 @@ function shuffler() {
 
 window.onload = randomizeColors;
 addPixelListeners();
-createCanvas();
+createCanvas(5);
 clearButton.addEventListener('click', clearBoard);
 shuffle.addEventListener('click', shuffler);
 chgCanvasBtn.addEventListener('click', changeCanvas);
