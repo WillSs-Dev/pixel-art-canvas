@@ -60,16 +60,23 @@ function createCanvas() {
     canvas.appendChild(pixel);
     addPixelListeners();
   }
-  if (canvas.childElementCount !== input.value * input.value) {
-    canvas.removeChild(canvas.firstChild);
-  }
 }
 
+function verify5() {
+  if (input.value < 5) {
+    canvas.innerHTML = '';
+    canvas.style.setProperty('--pixelNum', 5);
+    for (let i = 0; i < 5 * 5; i += 1) {
+      const pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      canvas.appendChild(pixel);
+      addPixelListeners();
+    }
+  }
+}
 function verify50() {
   if (input.value > 50) {
-    for (let i = canvas.childElementCount; i > 0; i -= 1) {
-      canvas.removeChild(canvas.firstChild);
-    }
+    canvas.innerHTML = '';
     canvas.style.setProperty('--pixelNum', 50);
     for (let i = 0; i < 50 * 50; i += 1) {
       const pixel = document.createElement('div');
@@ -78,20 +85,19 @@ function verify50() {
       addPixelListeners();
     }
   }
-  if (canvas.childElementCount !== 50 * 50) {
-    canvas.removeChild(canvas.firstChild);
-  }
+  input.value = '';
 }
 
 function changeCanvas() {
-  if (input.value < 5 || input.value > 50 || input.value === 0) {
-    alert('Board inválido!');
+  if (input.value < 5) {
+    verify5();
+  } else if (input.value > 50) {
     verify50();
+  } else if (input.value.length == 0) {
+    window.alert('Board inválido!');
   } else {
     canvas.style.setProperty('--pixelNum', input.value);
-    for (let i = canvas.childElementCount; i > 0; i -= 1) {
-      canvas.removeChild(canvas.firstChild);
-    }
+    canvas.innerHTML = '';
     createCanvas();
   }
   input.value = '';
