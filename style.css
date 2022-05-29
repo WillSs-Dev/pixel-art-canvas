@@ -2,6 +2,18 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: aliceblue;
+}
+
+.bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
 }
 
 main {
@@ -79,19 +91,19 @@ h1 {
 }
 
 #pixel-board {
-  --pixelNum: 5;
   height: auto;
   margin: auto;
   width: fit-content;
   display: grid;
   grid-template-columns: repeat(var(--pixelNum), 1fr);
   grid-template-rows: repeat(var(--pixelNum), 1fr);
+
+  --pixelNum: 5;
 }
 
 .pixel {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.493);
   border: 1px black solid;
-  border-radius: 3px;
   width: 40px;
   height: 40px;
 }

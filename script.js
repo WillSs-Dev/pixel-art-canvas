@@ -79,7 +79,7 @@ function changeCanvas() {
 
 function clearBoard() {
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = 'white';
+    pixels[i].style.backgroundColor = 'rgba(255, 255, 255, 0.493)';
   }
 }
 
