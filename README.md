@@ -1,13 +1,12 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# :blue_square: :red_square: :green_square: :paintbrush: Pixel Art Canvas :paintbrush: :green_square: :red_square: :blue_square:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## What was developed:
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+This project is a canvas that allows the user to make `pixel-art drawings` in it by selecting the desired color and the square in witch to paint.
+It was develeped as part of an `educational project` to exercise the integration of `HTML, CSS and Javascript` in one application.
+
+## Functionalities:
+
+- A set of color is selected randomly on the initial page load for the user to paint, but can be discarted for a new set of colors if the user wants to;
+- The user can set the width, in "pixels", of the grid. The minimum size is 5 "pixels" and the maximum is 50 "pixels";
+- The user can paint the grid, one pixel at a time, and change color when necessary.
