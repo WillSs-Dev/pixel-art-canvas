@@ -1,5 +1,9 @@
 # :blue_square: :red_square: :green_square: :paintbrush: Pixel Art Canvas :paintbrush: :green_square: :red_square: :blue_square:
 
+## Deploy:
+
+https://willss-dev.github.io/pixel-art-canvas/
+
 ## What was developed:
 
 This project is a canvas that allows the user to make `pixel-art drawings` in it by selecting the desired color and the square in witch to paint.
